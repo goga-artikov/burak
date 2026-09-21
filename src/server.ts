@@ -1,6 +1,3 @@
-console.log("Executed!")
+// Architectural pattern: MVC (Model-View-Controller), Dependency Injection, MVP
 
-import moment from "moment";
-
-const person: string = "Goga";
-const sount: number = 200;
+// Desingh patterns: Middleware, Decorator
