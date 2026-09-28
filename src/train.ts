@@ -1,15 +1,33 @@
+/* Project Standarts:
+- Logging standarts
+- Naming standart:
+    function, method, variable => CAMEL
+    class => PASCAL
+    folder file => KEBAB
+    css => SNAKE
+- Error handling
+
+*/
+
+
+
+
+
+
+
+
 // N-task
 
-function palindromCheck(input: string): boolean {
-    const reverseInput = input.toLowerCase().split("").reverse().join("");
-    if (input.toLowerCase() === reverseInput) {
-        return true;
-    }
-    return false;
+// function palindromCheck(input: string): boolean {
+//     const reverseInput = input.toLowerCase().split("").reverse().join("");
+//     if (input.toLowerCase() === reverseInput) {
+//         return true;
+//     }
+//     return false;
 
-}
+// }
 
-console.log(palindromCheck("non"))
+// console.log(palindromCheck("non"))
 
 
 
