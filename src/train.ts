@@ -9,8 +9,25 @@
 
 */
 
+/*
+Traditional API
+Rest API
+GraphQL API
+...
+*/
+//  O-TASK
 
+function calculateSumOfNumbers(arr: unknown[]): number {
+  return arr.reduce<number>((sum, item) => {
+    if (typeof item === "number" && !Number.isNaN(item)) {
+      return sum + item;
+    }
+    return sum;
+  }, 0);
+}
 
+const result: number = calculateSumOfNumbers([10, "10", { son: 10 }, true, 35]);
+console.log(result); // Natija: 45
 
 
 
