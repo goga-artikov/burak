@@ -15,23 +15,28 @@ Rest API
 GraphQL API
 ...
 */
+
+// P-Task
+
+function obyektBorArrayga<T>(obj: Record<string, T>): [string, T][] {
+  return Object.entries(obj);
+}
+const result = obyektBorArrayga({ c: 17, v: 43 });
+console.log(result);
+
 //  O-TASK
 
-function calculateSumOfNumbers(arr: unknown[]): number {
-  return arr.reduce<number>((sum, item) => {
-    if (typeof item === "number" && !Number.isNaN(item)) {
-      return sum + item;
-    }
-    return sum;
-  }, 0);
-}
+// function calculateSumOfNumbers(arr: unknown[]): number {
+//   return arr.reduce<number>((sum, item) => {
+//     if (typeof item === "number" && !Number.isNaN(item)) {
+//       return sum + item;
+//     }
+//     return sum;
+//   }, 0);
+// }
 
-const result: number = calculateSumOfNumbers([10, "10", { son: 10 }, true, 35]);
-console.log(result); // Natija: 45
-
-
-
-
+// const result: number = calculateSumOfNumbers([10, "10", { son: 10 }, true, 35]);
+// console.log(result); // Natija: 45
 
 // N-task
 
@@ -45,8 +50,6 @@ console.log(result); // Natija: 45
 // }
 
 // console.log(palindromCheck("non"))
-
-
 
 // M-Task
 
