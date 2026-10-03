@@ -16,13 +16,18 @@ GraphQL API
 ...
 */
 
-// P-Task
+/*
+Traditional Frontend => SSR => EJS
+Modern Frontend => SPA => React, Vue, Angular
+*/
 
-function obyektBorArrayga<T>(obj: Record<string, T>): [string, T][] {
-  return Object.entries(obj);
-}
-const result = obyektBorArrayga({ c: 17, v: 43 });
-console.log(result);
+// // P-Task
+
+// function obyektBorArrayga<T>(obj: Record<string, T>): [string, T][] {
+//   return Object.entries(obj);
+// }
+// const result = obyektBorArrayga({ c: 17, v: 43 });
+// console.log(result);
 
 //  O-TASK
 
