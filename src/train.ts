@@ -21,6 +21,36 @@ Traditional Frontend => SSR => EJS
 Modern Frontend => SPA => React, Vue, Angular
 */
 
+// Q-TASK
+
+interface Car {
+    name: string;
+    model: string;
+}
+
+const car: Car = { name: "BMW", model: "M3" };
+
+console.log(hasProperty(car, "model"));
+console.log(hasProperty(car, "year"));
+
+const propertyName = "model";
+
+if (hasProperty(car, propertyName)) {
+    console.log(car[propertyName]); //
+}
+
+function hasProperty(car: Car, arg1: string): boolean {
+    return arg1 in car;
+}
+
+
+// function hasProperty(obj, str) {
+//     return str in obj;
+// }
+
+// console.log(hasProperty({name: "BMW", model: "M3"}, "model")); // true
+// console.log(hasProperty({name: "BMW", model: "M3"}, "year"));  // false
+
 // // P-Task
 
 // function obyektBorArrayga<T>(obj: Record<string, T>): [string, T][] {
