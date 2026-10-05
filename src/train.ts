@@ -21,27 +21,39 @@ Traditional Frontend => SSR => EJS
 Modern Frontend => SPA => React, Vue, Angular
 */
 
+// R-TASK
+
+function calculate(str: string): number {
+    return str
+        .split('+')
+        .reduce((sum, num) => sum + Number(num.trim()), 0);
+}
+
+console.log(calculate("1+3"));      // 4
+console.log(calculate("10+20"));    // 30
+console.log(calculate("1+2+3+4"));  // 10
+
 // Q-TASK
 
-interface Car {
-    name: string;
-    model: string;
-}
+// interface Car {
+//     name: string;
+//     model: string;
+// }
 
-const car: Car = { name: "BMW", model: "M3" };
+// const car: Car = { name: "BMW", model: "M3" };
 
-console.log(hasProperty(car, "model"));
-console.log(hasProperty(car, "year"));
+// console.log(hasProperty(car, "model"));
+// console.log(hasProperty(car, "year"));
 
-const propertyName = "model";
+// const propertyName = "model";
 
-if (hasProperty(car, propertyName)) {
-    console.log(car[propertyName]); //
-}
+// if (hasProperty(car, propertyName)) {
+//     console.log(car[propertyName]); //
+// }
 
-function hasProperty(car: Car, arg1: string): boolean {
-    return arg1 in car;
-}
+// function hasProperty(car: Car, arg1: string): boolean {
+//     return arg1 in car;
+// }
 
 
 // function hasProperty(obj, str) {
