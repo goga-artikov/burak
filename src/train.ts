@@ -21,6 +21,12 @@ Traditional Frontend => SSR => EJS
 Modern Frontend => SPA => React, Vue, Angular
 */
 
+/*
+    reques join
+    self destroy
+
+*/
+
 // R-TASK
 
 function calculate(str: string): number {
