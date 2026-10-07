@@ -27,17 +27,33 @@ Modern Frontend => SPA => React, Vue, Angular
 
 */
 
-// R-TASK
+// S-TASK
 
-function calculate(str: string): number {
-    return str
-        .split('+')
-        .reduce((sum, num) => sum + Number(num.trim()), 0);
+function missingNumber(nums: number[]): number {
+  const n: number = nums.length;
+  const expectedSum: number = (n * (n + 1)) / 2;
+
+  const actualSum: number = nums.reduce(
+    (sum: number, num: number) => sum + num,
+    0
+  );
+
+  return expectedSum - actualSum;
 }
 
-console.log(calculate("1+3"));      // 4
-console.log(calculate("10+20"));    // 30
-console.log(calculate("1+2+3+4"));  // 10
+console.log(missingNumber([3, 0, 1])); // 2
+
+// R-TASK
+
+// function calculate(str: string): number {
+//     return str
+//         .split('+')
+//         .reduce((sum, num) => sum + Number(num.trim()), 0);
+// }
+
+// console.log(calculate("1+3"));      // 4
+// console.log(calculate("10+20"));    // 30
+// console.log(calculate("1+2+3+4"));  // 10
 
 // Q-TASK
 
