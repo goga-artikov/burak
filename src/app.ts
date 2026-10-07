@@ -3,6 +3,7 @@ import path from "path";
 import router from "./router";
 import routerAdmin from "./router-admin";
 import morgan from "morgan";
+import { T } from "./libs/types/common";
 
 import session from "express-session";
 import ConnectMongoDB from "connect-mongodb-session";
@@ -32,6 +33,11 @@ app.use(
     saveUninitialized: true,
   }),
 );
+app.use(function (req, res, next) {
+  const sessionInstance = req.session as T;
+  res.locals.member = sessionInstance.member;
+  next();
+});
 
 /** 3- VIEWS **/
 app.set("views", path.join(__dirname, "views"));
