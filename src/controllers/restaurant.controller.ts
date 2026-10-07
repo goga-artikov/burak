@@ -7,8 +7,10 @@ import { Message } from "../libs/types/Errors";
 
 const memberService = new MemberService();
 
+
 const restaurantController: T = {};
 restaurantController.goHome = (req: Request, res: Response) => {
+
   try {
     console.log("goHome");
     res.render("home"); //send
