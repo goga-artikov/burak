@@ -9,23 +9,29 @@
 
 */
 
-/*
+/* Request Types
 Traditional API
 Rest API
 GraphQL API
 ...
 */
 
-/*
+/* Frontend Development
 Traditional Frontend => SSR => EJS
 Modern Frontend => SPA => React, Vue, Angular
 */
 
-/*
+/* Coocies
     reques join
     self destroy
 
 */
+
+/** Validation
+  frontend validation
+  backend validation
+ database validation
+ */
 
 // S-TASK
 
@@ -33,10 +39,7 @@ function missingNumber(nums: number[]): number {
   const n: number = nums.length;
   const expectedSum: number = (n * (n + 1)) / 2;
 
-  const actualSum: number = nums.reduce(
-    (sum: number, num: number) => sum + num,
-    0
-  );
+  const actualSum: number = nums.reduce((sum: number, num: number) => sum + num, 0);
 
   return expectedSum - actualSum;
 }
@@ -76,7 +79,6 @@ console.log(missingNumber([3, 0, 1])); // 2
 // function hasProperty(car: Car, arg1: string): boolean {
 //     return arg1 in car;
 // }
-
 
 // function hasProperty(obj, str) {
 //     return str in obj;
