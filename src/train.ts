@@ -32,19 +32,53 @@ Modern Frontend => SPA => React, Vue, Angular
   backend validation
  database validation
  */
+// T-TASK
+
+ function mergeSortedArrays(
+  firstArray: readonly number[],
+  secondArray: readonly number[]
+): number[] {
+  const mergedArray: number[] = [];
+
+  let firstIndex = 0;
+  let secondIndex = 0;
+
+  while (
+    firstIndex < firstArray.length &&
+    secondIndex < secondArray.length
+  ) {
+    if (firstArray[firstIndex] <= secondArray[secondIndex]) {
+      mergedArray.push(firstArray[firstIndex]);
+      firstIndex++;
+    } else {
+      mergedArray.push(secondArray[secondIndex]);
+      secondIndex++;
+    }
+  }
+
+  return [
+    ...mergedArray,
+    ...firstArray.slice(firstIndex),
+    ...secondArray.slice(secondIndex),
+  ];
+}
+
+const result = mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]);
+
+console.log(result);
 
 // S-TASK
 
-function missingNumber(nums: number[]): number {
-  const n: number = nums.length;
-  const expectedSum: number = (n * (n + 1)) / 2;
+// function missingNumber(nums: number[]): number {
+//   const n: number = nums.length;
+//   const expectedSum: number = (n * (n + 1)) / 2;
 
-  const actualSum: number = nums.reduce((sum: number, num: number) => sum + num, 0);
+//   const actualSum: number = nums.reduce((sum: number, num: number) => sum + num, 0);
 
-  return expectedSum - actualSum;
-}
+//   return expectedSum - actualSum;
+// }
 
-console.log(missingNumber([3, 0, 1])); // 2
+// console.log(missingNumber([3, 0, 1])); // 2
 
 // R-TASK
 
