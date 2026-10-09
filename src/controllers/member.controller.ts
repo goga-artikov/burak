@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { T } from "../libs/types/common";
 import MemberService from "../models/Member.service";
 import { LoginInput, Member, MemberInput } from "../libs/types/member";
-import Errors from "../libs/types/Errors";
+import Errors from "../libs/utils/Errors";
 // REACT
 const memberService = new MemberService();
 
@@ -11,7 +11,7 @@ memberController.signup = async (req: Request, res: Response) => {
   try {
     console.log("signup");
     const input: MemberInput = req.body,
-        result: Member = await memberService.signup(input);
+      result: Member = await memberService.signup(input);
     //   TODO: Token integration
 
     res.json({ member: result });

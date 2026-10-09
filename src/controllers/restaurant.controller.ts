@@ -3,15 +3,13 @@ import { T } from "../libs/types/common";
 import MemberService from "../models/Member.service";
 import { AdminRequest, LoginInput, MemberInput } from "../libs/types/member";
 import { MemberType } from "../libs/enums/member.enum";
-import Errors, { HttpCode, Message } from "../libs/types/Errors";
+import Errors, { HttpCode, Message } from "../libs/utils/Errors";
 import path from "path";
 
 const memberService = new MemberService();
 
-
 const restaurantController: T = {};
 restaurantController.goHome = (req: Request, res: Response) => {
-
   try {
     console.log("goHome");
     res.render("home"); //send
@@ -51,7 +49,7 @@ restaurantController.processSignup = async (req: AdminRequest, res: Response) =>
     }
 
     const newMember: MemberInput = req.body;
-    newMember.memberImage = file?.path
+    newMember.memberImage = file?.path;
     newMember.memberType = MemberType.RESTAURANT;
     const result = await memberService.processSignup(newMember);
 
@@ -107,19 +105,13 @@ restaurantController.checkAuthSession = async (req: AdminRequest, res: Response)
   }
 };
 
-restaurantController.verifyRestaurant = (
-  req: AdminRequest,
-  res: Response,
-  next: NextFunction
-) => {
+restaurantController.verifyRestaurant = (req: AdminRequest, res: Response, next: NextFunction) => {
   if (req.session?.member?.memberType === MemberType.RESTAURANT) {
     req.member = req.session.member;
     next();
   } else {
     const message = Message.NOT_AUTHENTICATED;
-    res.send(
-      `<script>alert('${message}'); window.location.replace('/admin/login');</script>`
-    );
+    res.send(`<script>alert('${message}'); window.location.replace('/admin/login');</script>`);
   }
 };
 
