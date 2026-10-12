@@ -32,40 +32,58 @@ Modern Frontend => SPA => React, Vue, Angular
   backend validation
  database validation
  */
-// T-TASK
+// U-TASK
 
- function mergeSortedArrays(
-  firstArray: readonly number[],
-  secondArray: readonly number[]
-): number[] {
-  const mergedArray: number[] = [];
+function sumOdds(num: number): number {
+  let count = 0;
 
-  let firstIndex = 0;
-  let secondIndex = 0;
-
-  while (
-    firstIndex < firstArray.length &&
-    secondIndex < secondArray.length
-  ) {
-    if (firstArray[firstIndex] <= secondArray[secondIndex]) {
-      mergedArray.push(firstArray[firstIndex]);
-      firstIndex++;
-    } else {
-      mergedArray.push(secondArray[secondIndex]);
-      secondIndex++;
-    }
+  for (let i = 1; i <= num; i += 2) {
+    count++;
   }
 
-  return [
-    ...mergedArray,
-    ...firstArray.slice(firstIndex),
-    ...secondArray.slice(secondIndex),
-  ];
+  return count;
 }
 
-const result = mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]);
+const sumOddss = (num: number): number => Math.floor((num + 1) / 2);
 
-console.log(result);
+console.log(sumOdds(9));  // 5
+console.log(sumOddss(11)); // 6
+
+
+// T-TASK
+
+//  function mergeSortedArrays(
+//   firstArray: readonly number[],
+//   secondArray: readonly number[]
+// ): number[] {
+//   const mergedArray: number[] = [];
+
+//   let firstIndex = 0;
+//   let secondIndex = 0;
+
+//   while (
+//     firstIndex < firstArray.length &&
+//     secondIndex < secondArray.length
+//   ) {
+//     if (firstArray[firstIndex] <= secondArray[secondIndex]) {
+//       mergedArray.push(firstArray[firstIndex]);
+//       firstIndex++;
+//     } else {
+//       mergedArray.push(secondArray[secondIndex]);
+//       secondIndex++;
+//     }
+//   }
+
+//   return [
+//     ...mergedArray,
+//     ...firstArray.slice(firstIndex),
+//     ...secondArray.slice(secondIndex),
+//   ];
+// }
+
+// const result = mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]);
+
+// console.log(result);
 
 // S-TASK
 
