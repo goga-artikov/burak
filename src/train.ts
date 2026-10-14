@@ -32,22 +32,37 @@ Modern Frontend => SPA => React, Vue, Angular
   backend validation
  database validation
  */
-// U-TASK
+// V-TASK
 
-function sumOdds(num: number): number {
-  let count = 0;
+function countChars(str) {
+  const result = {};
 
-  for (let i = 1; i <= num; i += 2) {
-    count++;
+  for (const char of str) {
+    result[char] = (result[char] || 0) + 1;
   }
 
-  return count;
+  return result;
 }
 
-const sumOddss = (num: number): number => Math.floor((num + 1) / 2);
+console.log(countChars("hello"));
 
-console.log(sumOdds(9));  // 5
-console.log(sumOddss(11)); // 6
+
+// U-TASK
+
+// function sumOdds(num: number): number {
+//   let count = 0;
+
+//   for (let i = 1; i <= num; i += 2) {
+//     count++;
+//   }
+
+//   return count;
+// }
+
+// const sumOddss = (num: number): number => Math.floor((num + 1) / 2);
+
+// console.log(sumOdds(9));  // 5
+// console.log(sumOddss(11)); // 6
 
 
 // T-TASK
