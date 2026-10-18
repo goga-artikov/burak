@@ -32,19 +32,34 @@ Modern Frontend => SPA => React, Vue, Angular
   backend validation
  database validation
  */
-// V-TASK
 
-function countChars(str) {
-  const result = {};
+//  W-TASK
 
-  for (const char of str) {
-    result[char] = (result[char] || 0) + 1;
+function chunkArray(array, size) {
+  const result = [];
+  
+  for (let i = 0; i < array.length; i += size) {
+    result.push(array.slice(i, i + size));
   }
-
+  
   return result;
 }
 
-console.log(countChars("hello"));
+console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
+
+// V-TASK
+
+// function countChars(str) {
+//   const result = {};
+
+//   for (const char of str) {
+//     result[char] = (result[char] || 0) + 1;
+//   }
+
+//   return result;
+// }
+
+// console.log(countChars("hello"));
 
 
 // U-TASK
