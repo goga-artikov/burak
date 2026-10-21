@@ -33,7 +33,7 @@ restaurantController.getSignup = (req: Request, res: Response) => {
 restaurantController.getLogin = (req: Request, res: Response) => {
   try {
     console.log("getLogin");
-    res.send("Login Page");
+    res.render("login");
   } catch (err) {
     console.log("Error, getLogin:", err);
     res.redirect("/admin");
