@@ -29,6 +29,7 @@ class ProductService {
 
     if (inquiry.productCollection)
       match.productCollection = inquiry.productCollection;
+
     if (inquiry.search) {
       match.productName = { $regex: new RegExp(inquiry.search, "i") };
     }
@@ -46,10 +47,6 @@ class ProductService {
         { $limit: inquiry.limit * 1 },
       ])
       .exec();
-
-    if (!result) {
-      throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
-    }
     return result;
   }
 
@@ -74,7 +71,7 @@ class ProductService {
         viewRefId: productId,
         viewGroup: ViewGroup.PRODUCT,
       };
-      const existView = await this.viewService.checckViewExistence(input);
+      const existView = await this.viewService.checkViewExistence(input);
 
       console.log("existView", !!existView);
       if (!existView) {
@@ -85,7 +82,7 @@ class ProductService {
         result = await this.productModel
           .findOneAndUpdate(
             { _id: productId },
-            { $inc: { productViews: 1 } },
+            { $inc: { productViews: +1 } },
             { new: true },
           )
           .exec();
